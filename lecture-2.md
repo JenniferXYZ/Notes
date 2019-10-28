@@ -160,6 +160,9 @@ White space matters
   * if \(IF\)
   * Some languages without reserved words
     * PL/I
+  * **Keywords**​ have a special meaning in a language, and are part of the syntax.
+  * **Reserved words**​ are words that cannot be used as identifiers \(variables, functions, etc.\), because they are reserved by the language.
+    * Reserved words violate the mutability principle since it’s not possible to add new keywords since that would break a lot of previous code.
 
 ## Grammar
 
@@ -168,8 +171,9 @@ White space matters
 * We use a parse tree to represent a grammar
 * Grammar for programming languages defines an infinite language; expressions can be arbitrarily long, recursive.
 * As long as the grammar generates at least one parse tree for a given string of tokens, that string is in the language. 
+* Grammar specifies what type of parse trees you can create from a set of tokens
 
-### Definition
+### Context free grammar
 
 * the set of **tokens**
 * the set of **non-terminal symbols**
@@ -178,6 +182,8 @@ White space matters
 * the set of **productions** 
   * consists of a left-hand side \(a single non-terminal symbol\), the separator ::=, and a right-hand side \(a sequence of one or more things\)
   * it permits right-hand side to be children in the parse tree
-  * 
 * **start symbol**: a particular non-terminal symbol
-* 
+* **terminal rules**: tokens or the leaves
+* If you want to prove that your line of code is correct, then it has to be separated into tokens and you have to create a valid parse tree according to the grammar that you’re given. And that grammar contains the rules that allow you to create the tree.
+* A grammar is **ambiguous** because you could have multiple different parses because of the addition and multiplication, so we need to figure out another rule so that we can avoid getting two different trees.
+

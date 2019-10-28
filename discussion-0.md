@@ -176,7 +176,7 @@ if 3 > 2 then 2;;
 * all elements in a list must be of same type
 * Some predefined functions
   * :: push an element into the list
-  * @ concat
+  * @ concat: need to make sure type consistency
   * length
   * map
   * filter
