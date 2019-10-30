@@ -7,10 +7,56 @@ description: 10/16/2019
 1. functional programming
 2. type inference
 
+## Compiler and Interpreter
+
+### Compiler
+
+* Compiler will take your program and translate it into machine code \(low level code that has the same effect as that high level instruction\)
+
+### Interpreter
+
+* An interpreter keeps source code in RAM, execute it directly
+* Pros:
+  * portable, since you can run the same instructions as whatever machine you’re using
+  * simple to write and read
+  * better with cross platform programs
+* Cons:
+  * slower, because it does error checking and catches errors as they happen \(e.g. index checking\)
+
+How to get both the high performance of compilers with the bug catching features of an interpreter?
+
+* Use interpreter while developing and use compiler for production but there is a problem between if the two will output the same results for the same program.
+
+## Three types of programming languages
+
+### Imperative \(Procedural\)
+
+Follow commands and sequence them C1; C2; … And also use variables and make assignments.
+
+### Functional
+
+Functions are the unit and you hook stuff together using function calls f\(x\) and you **don’t use any assignment statements**. **Never change the value of the variable**. Variables never vary in a functional language.
+
+### Logic
+
+Predicates are the units of computation. They are statements that are true or false. The syntax is p if q. **No assignments and no function calls.**
+
 ## Ocaml
 
+### Properties
+
+* It has static type checking to make sure that you’re not calling functions with the wrong types =&gt; code more reliable
+  * It's like C++ and Java but not Python and Javascript
+* Has type inference =&gt; You don’t have to write the types down in Ocaml
+  * This is like Python and Javascript but unlike C++ and Java.
+* has a garbage collector
+  * This is like Python and Java and Javascript, but unlike C and C++ cuz you gotta deal with your own memory
+  * Typically though, the automatic one will have worse performance than a manual collector given that that programmer knows how to use it
+* Good support for higher order functions
+  * This is like Python a little, but unlike everything else.
+
 ```ocaml
-if 1<2 then "a" e;se "b";;
+if 1<2 then "a" else "b";;
 -: string = "a"
 
 if "a" then 1 else 2;;
@@ -76,6 +122,18 @@ let head = fun x->fst x;;
 -: (int list * string list) list (*this works only
                                 when 'a = int
                                 'b = string*)
+                                
+let rec minlist = function 
+  | [] -> 99 
+  | h::t -> let m = minlist t in if h < m then h
+                                else m
+-: int list -> int
+
+Let rec minlista inf lt = function
+  | [] -> inf 
+  | h::t -> let m = minlista inf lt t in 
+        if lt h m then h else m
+:- 'a -> ('a -> 'a -> boolean) -> 'a list -> 'a = <fun>
 ```
 
 ### Aside on generic implementation

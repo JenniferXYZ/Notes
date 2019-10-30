@@ -67,8 +67,10 @@ Design goals:
 
 Hot spot compiling: interpret the program while profiling it \(\# of times the instructor is executed\)
 
+* reads byte code as its source, and convert to machine code.
 * table indexed by byte code offsets
 * compile mostly often used chunks to machine code
+* improves efficiency
 
 
 
@@ -185,4 +187,12 @@ e=255, f=0 \rightarrow   \pm NaN (23-bit)
 $$
 
 \(a - b != 0\) == \(a == b\)
+
+#### Subtype
+
+* If class A is a subclass of type B, it is a **subtype**.
+* A = b should be allowed if B’s type is a subtype of A’s type. ○ Equivalent to tryna to determine if int subset of long \(b subset of a\)
+* The idea is that in order for something to be a subtype s of another type t, s has to be able to do all the operations that t can do.
+
+
 

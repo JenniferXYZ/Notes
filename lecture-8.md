@@ -17,7 +17,7 @@ description: 10/23/2019
   * the internet speed in low Rkb/s. If update, then that would be slow \(Bloated executables\)
 * Steals ideas from Xerox PARC, they invented Smalltalk \(O-O\) language
 
-  Object oriented and simple. It also compiled the source code into machine independent bytecodes, and then to make it work on different machines you need to create bytecode interpreters, which were not too difficult to create.
+  **Object oriented and simple**. It also compiled the source code into machine independent bytecodes, and then to make it work on different machines you need to create bytecode interpreters, which were not too difficult to create.
 
   * interpreted/portable language -&gt; byte code formal
     * garbage collection for memory
@@ -103,8 +103,8 @@ int f(){
 ### **Interface**
 
 * The substitute for multiple inheritance is called an Interface. 
-* Defines what a class must be able to do, not how to do
-* Interface cannot be instantiated, much create a class that implements that interface
+* Defines what a class **must be able to do, not how to do**
+* Interface **cannot be instantiated**, much create a class that implements that interface
 * Parent has m\(\) and n\(\). The child gets those 2 methods and that saves work. With an interface, though, it’s like you’re inheriting a debt which means that if the child implements the interface \(Let’s say the inheritance declares o\(\) and p\(\)\), then the child has to implement o\(\) and p\(\). 
 * The interface placed a constraint on the child’s behavior.
 
@@ -127,7 +127,7 @@ public class Drawable_Rectangle
 ```
 
 * You are allowed to implement as many Object as possible
-* Why using interface:
+* **Why using interface:**
   * to achieve total abstraction.
   * java does not support multiple inheritance in case of class
   * to achieve loose coupling.
@@ -149,24 +149,25 @@ public class Drawable_Rectangle
   }
   ```
 
-* Basically supply initial code to the subclasses, but there are some holes for the child classes to define themselves. ○ This is kind of the combination between classes and an interface.
+* Basically supply initial code to the subclasses, but there are some holes for the child classes to define themselves. 
+  * This is kind of the combination between classes and an interface.
 
-  * An abstract class is useful to be parent of other classes.
+    * An abstract class is useful to be parent of other classes.
 
-  ```java
-  New Rectangle(); //okay
-  New Drawable(); // not okay, it is an interface, not an executable
-  New AbstractList; // not okay, there are holes in it
-  AbstractList x = New Linkedlist(); //okay
-  ```
+    ```java
+    New Rectangle(); //okay
+    New Drawable(); // not okay, it is an interface, not an executable
+    New AbstractList; // not okay, there are holes in it
+    AbstractList x = New Linkedlist(); //okay
+    ```
 
 ### Final class
 
 * Final classes have no children
-  * method cannot be overriden
-  * runtime will be less if only use Final class because final class cannot be overridden/overwritten
+  * method cannot be overridden
+  * runtime will be less if only use final class because final class cannot be overridden/overwritten
   * allows inline
-  * dont trust the children, prohibits children misbehaviour
+  * dont trust the children, prohibits children misbehavior
 
 ### Things to do: 
 

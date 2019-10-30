@@ -44,6 +44,8 @@ $$
 
 ### Properties
 
+No assignment statements and no side effects in functional programming
+
 * no sequencing \(no ;\)
   * do f \( g\(x\) , h\( i\(y\) \), z \) \)
 * no assignments \(no =\)

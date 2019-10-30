@@ -121,7 +121,7 @@ type 'a option =
 \(**Recursion**\)
 
 ```text
-A -> 
+A -> aA
 ============================================
 [fun acceptor -> 
      (   fun frag -> 
@@ -161,6 +161,10 @@ fun acceptor ->
         match frag with
         | T"t"::s -> acceptor s
         | _ -> None
+==============================================
+fun acceptor ->function
+    | T"t"::s -> acceptor s
+    | _ -> None
 ```
 
 \(**Alternation**\)
