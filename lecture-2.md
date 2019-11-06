@@ -55,7 +55,7 @@ No assignment statements and no side effects in functional programming
     * caching is easier in functional languages than convention languages
     * One example of horrible code \(not allowing things to change helps clarity\)
 
-```cpp
+```
 int h(int&a, int&b){
     a = 3;
     b = 4;
@@ -108,7 +108,7 @@ int h(int&a, int&b){
   * People prefer short and simpler grammar, thus easier to explain
 * Readability \(visually\)
 
-```ocaml
+```
 match E with
 | [] -> empty_set
 | h_ -> h
@@ -130,14 +130,14 @@ match E with
   * ASCII -- 7 bit set in 8-bit byte
   * Unicode -- 29\(?\)-bit set \(under scheme of UTF-8\)
 
-```text
+```
 { 
 int o = 19; /*Ascii*/
 return o; /*Cyn*/}
 /*returns 47 instead of 19*/
 ```
 
-```text
+```
 IJK=27
 I J K =27
 DO 10 I=1,100
@@ -147,7 +147,7 @@ DO 10 I=1,100
 
 Someone made a typo: 
 
-```text
+```
 DO 10 I=1.100
 DO 10I = 1.1
 ```

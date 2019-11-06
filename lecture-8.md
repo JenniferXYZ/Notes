@@ -53,7 +53,7 @@ description: 10/23/2019
     * if C int overflows, undefined behavior
   * Results of calculations maybe be different by different Java interpreters
 
-    ```text
+    ```
     a * b + c
     ```
 * **Reference Types \(**values that point to places in memory**\)**
@@ -65,7 +65,7 @@ description: 10/23/2019
 * always live in the heap. Only way, use "new" 
 * always objects
 
-```java
+```
 Int [] foo = new int [100]; 
 ```
 
@@ -75,7 +75,7 @@ Example:
 
 In C, y cannot be changed. If y is a pointer, you are not allowed to change the value of y.
 
-```c
+```
 int func(){
     struct s {int a[10];} x,y;
     x = y; /*copys 10 ints*/
@@ -88,7 +88,7 @@ int f(){
 } // error
 ```
 
-```java
+```
 int f(){
     int x[10];
     int y[] = x;    
@@ -108,7 +108,7 @@ int f(){
 * Parent has m\(\) and n\(\). The child gets those 2 methods and that saves work. With an interface, though, it’s like you’re inheriting a debt which means that if the child implements the interface \(Let’s say the inheritance declares o\(\) and p\(\)\), then the child has to implement o\(\) and p\(\). 
 * The interface placed a constraint on the child’s behavior.
 
-```java
+```
 public class Rectangle{
 
 }
@@ -141,7 +141,7 @@ public class Drawable_Rectangle
 * Classes can extend only one abstract or normal class
 * An abstract class is where you have some methods implemented but some that are declared but not defined. 
 
-  ```java
+  ```
   class p{
       int m(){/*code*/};
       int n(){/*code*/};
@@ -154,7 +154,7 @@ public class Drawable_Rectangle
 
     * An abstract class is useful to be parent of other classes.
 
-    ```java
+    ```
     New Rectangle(); //okay
     New Drawable(); // not okay, it is an interface, not an executable
     New AbstractList; // not okay, there are holes in it

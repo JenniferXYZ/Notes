@@ -16,7 +16,7 @@ syntax
 
 ## Ambiguity
 
-```text
+```
 stmt:
     ;
     expr;
@@ -27,7 +27,7 @@ stmt:
     {stmt list};
 ```
 
-```text
+```
 /* An example of ambiguity: dangling else */
 if (expr) stmt
 if (expr) stmt else stmt
@@ -45,19 +45,19 @@ stmt: if (expr) stmt1 else stmt2
 
 ### Dangling "else"
 
-```cpp
+```
 if (a<b) if (c<d) a++; else b++;
 ```
 
 There are two ways of parsing it:
 
-* ```cpp
+* ```
   if (a<b) 
       {if (c<d) 
           a++;
       else b++;}
   ```
-* ```cpp
+* ```
   if (a<b) 
       {if (c<d) 
           a++;}
@@ -69,20 +69,20 @@ There are two ways of parsing it:
 * At least for each if statement, we must have an else in Ocaml.
 * But function calls:
 
-  ```ocaml
+  ```
   f x y;;
   f g x y;;
   ```
 
   Because Ocaml function application is always **left-associated,** 
 
-  ```ocaml
+  ```
   f g x y -> ((f g) x) y
   ```
 
 #### What about match statement in Ocaml?
 
-```ocaml
+```
 match E with
 |P1 -> E1
 |P2 -> match F with
@@ -104,7 +104,7 @@ match E with
 
 #### Abstract
 
-* ```text
+* ```
   E -> E + E
   E -> ID
   E -> (E)
@@ -112,7 +112,7 @@ match E with
 
 #### Concrete syntax
 
-* ```text
+* ```
   E -> E + T
   E -> T
   T -> ID
@@ -129,7 +129,7 @@ grammar -&gt; parser
 
 * Example: Prolog operator declarations
 
-  ```text
+  ```
   :-op(500, yfx, [+,-])
   :-op(400, yfx, [*,/])
   :-op(200, xfy, [**])
@@ -145,7 +145,7 @@ grammar -&gt; parser
 
   **left-associate**
 
-  ```cpp
+  ```
   if (a<b<c) 
       i++;
   /* This is a valid c/c++ code, because c/c++ 
@@ -163,7 +163,7 @@ grammar for header
 
 * msg ID: each email has a UNIQUE msg ID 
 
-  ```text
+  ```
   msg-id="<"word *("." word) "@" atom *("." atom)">"
                   /*0 or more words*/ 
   ```
@@ -175,7 +175,7 @@ grammar for header
 
   Meta-notations in the above msg-id
 
-  ```text
+  ```
   word=atom / quoted-string
   atom=1*<any CHAR except specials, space and CTLs>
     CHAR = any ASCII char
@@ -192,14 +192,14 @@ grammar for header
 
 EBNF: extended \(meta-notation\) Backus-Naur Form
 
-```text
+```
 nonterminal -> (nonterminal | terminal)*
 
 ```
 
 EBNF form of msg-id:
 
-```text
+```
 msg-id = "<" word dot-words "2" atom dot-atoms ">"
 dot-words = "." word dot-words
 dot-words = 

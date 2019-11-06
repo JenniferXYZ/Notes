@@ -21,7 +21,7 @@ Grammars for
 
 ### Ex. text grammar for a bit for Scheme
 
-```text
+```
 <cond> -> (cond <cond clause>+)
              |  (cond <cond clause>* (else <sequence>))
 ```
@@ -34,7 +34,7 @@ Syntax diagram \(for the above grammar\):
 
 You can make multiple grammars into one diagram:
 
-```text
+```
 A -> (B*)
 B -> ID|NUM
 ```
@@ -45,7 +45,7 @@ flowchart for a parser for cond
 
 Parsing the simple diagram example:
 
-```text
+```
 bool parse_cond (void) {
     if (gettok() != '(')
         return false;
@@ -75,7 +75,7 @@ At each stage, you look for a token, or fail
 
 * Recursion
 
-  ```text
+  ```
   A -> A -> .... A
   ```
 
@@ -84,7 +84,7 @@ At each stage, you look for a token, or fail
 
 * Alternation \(OR\)
 
-  ```text
+  ```
   A -> B|C|D|...
   ```
 
@@ -93,14 +93,14 @@ At each stage, you look for a token, or fail
 
 * Concatenation
 
-  ```text
+  ```
   A -> BCD...
 
   ```
 
 ### HW2 Hints
 
-```text
+```
 fragment = token list (    )
 acceptor = fragment -> fragment option 
 matcher = acceptor -> fragment -> fragment option
@@ -120,7 +120,7 @@ type 'a option =
 
 \(**Recursion**\)
 
-```text
+```
 A -> aA
 ============================================
 [fun acceptor -> 
@@ -128,7 +128,7 @@ A -> aA
            acceptor frag )]
 ```
 
-```text
+```
 (*some simplification tricks*)
 fun x -> f x 
 <=> f
@@ -147,12 +147,12 @@ let match_never accept frag -> None
 <=> let match_never _ _ -> None
 ```
 
-```text
+```
 (*How to parse a empty condition*)
 A -> [fun acceptor -> acceptor]    (*identity fun*)
 ```
 
-```text
+```
 (*How to parse a single token t*)
 B -> t 
 ============================================
@@ -169,7 +169,7 @@ fun acceptor ->function
 
 \(**Alternation**\)
 
-```text
+```
 (*How to parse an OR-condition*)
 C -> D
 C -> E
@@ -191,7 +191,7 @@ this case*)
 
 \(**Concatenation**\)
 
-```text
+```
 F -> GH    (*mG mH*)
         sG   s
 frag: G | H | suffix
@@ -209,7 +209,7 @@ let mF = fun accept ->
      mG (mH accept)
 ```
 
-```text
+```
 A -> BCDE
 A -> 
 fun pattern list -> matcher
@@ -223,7 +223,7 @@ let mmfcpl = function
         
 ```
 
-```text
+```
 C -> D
 C -> E
 C -> F
@@ -242,7 +242,7 @@ let mmds = function
 
 ## Patterns
 
-```text
+```
 match E with
   | P1 -> E1
   | Pi -> Ei

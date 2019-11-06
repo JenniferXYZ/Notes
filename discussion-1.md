@@ -4,7 +4,7 @@ description: 10/04/2019
 
 # Discussion 1
 
-```ocaml
+```
 let x = 5;;
 (*Ocaml knows x is an int because 5 is an int*)
 (+);;
@@ -21,7 +21,7 @@ int -&gt; int -&gt; int
 int-&gt;\(int-&gt;int\)
 {% endhint %}
 
-```ocaml
+```
 let rec insert_n_lst n (x:int) lst = (*we specify x to be an int*)
 if n = 0 then lst else x::(insert_n_lst (n-1) x lst);;
  (*int -> int -> int list -> int list*)
@@ -33,7 +33,7 @@ insert_n_lst 3 4 [6:7];;
 
 If we do not specify x to be int:
 
-```ocaml
+```
 let rec insert_n_lst n x lst = 
 if n = 0 then lst else x::(insert_n_lst (n-1) x lst);;
 (*int -> 'a -> 'a list -> 'a list = <fun> *)
@@ -46,7 +46,7 @@ Here 'a means some type, as long as the elements in the list are of the same typ
 
 ### List of mixed types:
 
-```ocaml
+```
 type optional = Some of int | None;;
 [Some 1; None; Some];;
 
@@ -56,7 +56,7 @@ type 'a optional = Some of 'a | None;; (*general type*)
 
 ```
 
-```ocaml
+```
 type ('nonterminal, 'terminal) symbol =
   | N of 'nonterminal
   | T of 'terminal
@@ -69,7 +69,7 @@ N 1;;
 
 ### Match
 
-```ocaml
+```
 let plus_1 x = match x with
 | Some y -> y+1
 | None -> None;;
@@ -86,7 +86,7 @@ plus_1 None;; (*returns None*)
 
 Exersice:
 
-```ocaml
+```
 let rec insert_n n x lst = 
 match x with
 | _ when n = 0 -> lst
@@ -105,7 +105,7 @@ insert_n 2 None;;
 Weak type
 {% endhint %}
 
-```ocaml
+```
 let f g = g (g None)
 (*val f: ('a option -> 'a optional) -> 'a optional = <fun>*)
 (*
@@ -119,7 +119,7 @@ f: 'c (optional -> 'c optional) -> 'c optional
 
 ```
 
-```ocaml
+```
 let f g = g g;;
 (* Error*)
 (*
@@ -133,7 +133,7 @@ g g => g is 'c
 
 ```
 
-```ocaml
+```
 let get_some x = Some x;;
 
 let p = (get_some 1, get_some 1.5);;
@@ -150,7 +150,7 @@ int != float
 
 ### Define a recursive type
 
-```ocaml
+```
 type 'a option = Some of 'a | None;;
 type 'a bst = Node of ('a * 'a bst optional * 'a bst optional);;
 (*Node of 'a contains a subtree of 'a optional type*)
@@ -163,7 +163,7 @@ For a tuple of type, we use \* instead of value
 \(int\*int\) = \(1,2\)
 {% endhint %}
 
-```ocaml
+```
 let tree = Node(let leaf_1 = Node (1, None, None);;
 let leaf x = Node(x, None, None)::
 let node_2 = Node(2, Some (leaf 1), Some (leaf 4));;
@@ -174,7 +174,7 @@ let tree = Node(3, Some node_2, Some_5);;
 
 Write a function for infix\_traversal: \[1;2;4;3;5;6\]
 
-```ocaml
+```
 let infix_traversal tree lst = 
 
 ```

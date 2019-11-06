@@ -30,7 +30,7 @@ M.D. McIlroy \(Bell Labs\)
 * hash trie \(trie: sorta binary tree but not binary\)
 * shell 
 
-```bash
+```
 tr -cs -s 'A-Za-z' '[\n]x' | sort | uniq -c | sort -nr
 ```
 
@@ -87,7 +87,7 @@ tr -cs -s 'A-Za-z' '[\n]x' | sort | uniq -c | sort -nr
 * Safety
   * Error check at run time or compile time, or no checking
 
-```cpp
+```
 char c;
 int *p = &c;
 *p = 10000;

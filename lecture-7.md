@@ -43,7 +43,7 @@ Design goals:
 * short \(16-bit\), int \(32-bit\), long\(64-bit\) on all machines
 * Interpreter model for implementation
 
-  ```text
+  ```
   Foo.java    -> java c    -> Foo.class    -> Java
                   |                |            |
           witten in Java ->   byte codes   -> witten in C/ASCII
@@ -118,13 +118,13 @@ set of values \(int etc.\) + set of operations \(+ / - & \* etc.\)
   * useful for reader of code 
   * useful for compiler of code =&gt; **more efficient** 
 
-  ```text
+  ```
   int x = f(z); (x->%edi)
   ```
 
 * Inference: \(Ocaml likes this\)
 
-  ```text
+  ```
   a     +     b      *     c
   |           |            | 
   float      int          char
@@ -138,7 +138,7 @@ set of values \(int etc.\) + set of operations \(+ / - & \* etc.\)
 
 * Type checking \(redundancy to catch dumb mistakes\)
 
-  ```text
+  ```
   char *p = a + b
             int_int
               int
@@ -163,7 +163,7 @@ Cannot subvert the type system
 
 #### **Float x86-64 32-bit IEEE FP**
 
-```text
+```
  -----------------------------------------------
  |  s  |     e      |             f            |
  -----------------------------------------------

@@ -55,7 +55,7 @@ Predicates are the units of computation. They are statements that are true or fa
 * Good support for higher order functions
   * This is like Python a little, but unlike everything else.
 
-```ocaml
+```
 if 1<2 then "a" else "b";;
 -: string = "a"
 
@@ -64,7 +64,7 @@ if "a" then 1 else 2;;
 if 1<2 then "a" else 37;;
 ```
 
-```ocaml
+```
 let p = (1,2);;
 -: p:int*int=(1,2)
 
@@ -80,7 +80,7 @@ let int = ();;
 * pros: heterogeneous \(can be of diff type\) \(more flexible\)
 * cons: size is known \(fixed\)
 
-```ocaml
+```
 let id x=x
 let id = fun x -> x (*it can't look into the argm,
                 because identity function is supposed
@@ -89,7 +89,7 @@ let cp = fun x -> (x,x)
 
 ```
 
-```ocaml
+```
 let r = (3,5,r);;
 (*r is not declared yet, so cannot create a recursive
 tuple*)
@@ -103,7 +103,7 @@ let head = fun x->fst x;;
 * pros: homogeneous
 * cons: size is unknown \(part of type\)
 
-```ocaml
+```
 [1;"a"];;
 (*you CANNOT do this to ocaml ugh*)
 [1;-3;2+8];;
@@ -142,12 +142,12 @@ Let rec minlista inf lt = function
 
 ## Functional Programming
 
-```text
+```
 (cons x y)
 (*construct: create a pointer to pair |x|y| *)
 ```
 
-```ocaml
+```
 let cons(x,y) = x::y;;
 -: cons: 'a*'a list -> 'a list = <fun>
 let ccons x y = x::y;;
@@ -170,7 +170,7 @@ let rccons y x = x::y;;
 
 **currying**: \(each function takes exactly one argument\)
 
-```ocaml
+```
 (+);; (*when you have parentheses around +, it refers
         to a function*)
 -: int -> int -> int -> <fun>
@@ -180,7 +180,7 @@ add1 15;;
 -: int = 16
 ```
 
-```text
+```
 p = (cons c y)
 (car p) => x
 (cdr p) => y
@@ -188,7 +188,7 @@ cons (x,y)
 ccons x y
 ```
 
-```ocaml
+```
 let car x::_ = x;;
 -: car 'a list -> 'a = <fun>
 (*we will get a compile-time warning, because 
@@ -224,7 +224,7 @@ let gcar d = (function
 
 ## Recursion
 
-```ocaml
+```
 let rec rev0 = function
     | [] -> []
     | h::t -> (rev0 t)@h;;

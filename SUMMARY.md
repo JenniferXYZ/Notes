@@ -12,4 +12,5 @@
 * [Lecture 6](lecture-6.md)
 * [Lecture 7](lecture-7.md)
 * [Lecture 8](lecture-8.md)
+* [Discussion 4](discussion-4.md)
 
