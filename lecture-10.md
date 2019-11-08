@@ -212,3 +212,5 @@ no
 * if I don't tell you something about the predicate, it is false
 * Suppose "everything that I don't tell you is false."
 
+Dybrig $1-3,4
+

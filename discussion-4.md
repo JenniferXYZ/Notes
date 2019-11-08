@@ -20,7 +20,7 @@ E.x. SQL
   * fact 
   * rule
 
-  ```
+  ```text
   lower_case -> fact
 
   ?- [temp]
@@ -41,7 +41,7 @@ E.x. SQL
 * lower\_case -&gt; fact
 * upper\_case -&gt; variable
 
-```
+```text
 is_type(bool).
 is_type(int).
 of_type(t, bool).
@@ -89,7 +89,7 @@ two different trees*)
 
 ### Unification
 
-```
+```text
 (*unification*)
 match (1, (2, "a")) with
     | x,y -> x=1 y=(2,"a")
@@ -108,7 +108,7 @@ Type = int
 
 ### Grammar in prolog: 
 
-```
+```text
 term : = atom 
     | Relation
 Relation := atom(term+)
@@ -121,7 +121,7 @@ Relation := atom(term+)
 * evaluates rhs and compare it to lhs
 * only evaluates rhs
 
-```
+```text
 ?- 2 is 1+1.
 yes
 (*evaluate rhs and compare it to lhs*)
@@ -136,7 +136,7 @@ NO (* "is" only evaluates rhs*)
 
 * makes comparison
 
-```
+```text
 ?- 1+1 =:= 0+2.
 yes
 
@@ -154,7 +154,7 @@ error
 
 * if
 
-```
+```text
 of_type(Sum, int) :- 
     Sum = +(X,Y),
     of_type(X, int),
@@ -188,13 +188,13 @@ error, stack overflow (*if returns bool, not int*)
 
 ### List
 
-```
+```ocaml
 [1;2;3];; 
 1::2::[3];;
 H::T (*head to tail*)
 ```
 
-```
+```text
 [1,2,3].
 [1,2|[3]].
 [H|T]. (*head to tail*)
@@ -203,7 +203,7 @@ H::T (*head to tail*)
 
 #### is\_member
 
-```
+```text
 (*if x is an element of list*)
 is_member(x,[x|_]).
 is_member(x,[_|t]) :- is_member(x,t).
@@ -222,7 +222,7 @@ x = 5?
 
 #### append
 
-```
+```text
 app([],Lst,Lst).
 app([H|T], Lst, [H|Tmp]) :- app(T, Lst, Tmp).
                     |
@@ -232,7 +232,7 @@ app([H|T], Lst, [H|Tmp]) :- app(T, Lst, Tmp).
 
 #### quicksort \(recursive function\)
 
-```
+```text
 qsort(input, output)
     input: [Pivot|Tail]
     Output: [app(less,[Pivot|Great])]
@@ -241,7 +241,7 @@ qsort(input, output)
         split(Tail, Pivot, p1, p2)
 ```
 
-```
+```text
 qsort([],[]).
 qsort([H|T], Output) :- 
     split(T,H,Less,Great),
@@ -268,14 +268,14 @@ Magic square:
 3. sum of each col = same
 4. sum of dig = same
 
-   ```
+   ```text
    e.g.
    4 9 2
    3 5 7
    8 1 6
    ```
 
-   ```
+   ```text
    contain_less(_,0).
 
    contain_less(List,X) :-
@@ -311,7 +311,7 @@ Magic square:
 
 * an acceleration
 
-  ```
+  ```text
   contain_less(_,0).
 
   contain_less(List,X) :-
@@ -353,7 +353,7 @@ Generate a decreasing sequence starting with n
 
 E.x. seq\(Lst,3\) -&gt; \[3,2,1\]
 
-```
+```text
 seq([],0) !. (* "!" checkpoint*)
 (*so when N<0, it will stop*)
 seq([N|T], N) :- (*becuase N will be the head of ret*)

@@ -14,25 +14,25 @@ Seasnet server: lnxsrv 06,07,09,10
 Float cannot be added. To add float, we need a dot after + \(e.g. 1+.2.;;\)
 {% endhint %}
 
-```
+```ocaml
 23;;
 ```
 
 Output: int = 23
 
-```
+```ocaml
 23.;;
 ```
 
 Output: float = 23
 
-```
+```ocaml
 1.+2.;;
 ```
 
 Output: Error, float cannot be added
 
-```
+```ocaml
 1. + .2.;;
 ```
 
@@ -40,13 +40,13 @@ Output: float = 3.
 
 ### Boolean
 
-```
+```ocaml
 let bool = true;;
 ```
 
 Output: val bol: bool = true
 
-```
+```ocaml
 not bool;;
 ```
 
@@ -54,7 +54,7 @@ Output: bool = false
 
 ### String
 
-```
+```ocaml
 "hello world";;
 ```
 
@@ -62,7 +62,7 @@ Output: string = "hello world"
 
 ### Void
 
-```
+```ocaml
 let uintvar = ();;
 ```
 
@@ -74,43 +74,43 @@ Output: var uintvar: unit = \(\)
 Use keyword "let"
 {% endhint %}
 
-```
+```ocaml
 let x = 5;;
 let x = "string";;
 ```
 
 ## Function
 
-```
+```ocaml
 let add_int x y = x + y;;
 ```
 
 val add\_int: int-&gt;int-&gt;int = &lt;fun&gt;
 
-```
+```ocaml
 add_int 1 2;;
 ```
 
 Output: int = 3
 
-```
+```ocaml
 let add_float x y = x +. y;;
 ```
 
 val add\_float: float-&gt;float-&gt;float=&lt;fun&gt;
 
-```
+```ocaml
 let x = 5 in x+1;;
 ```
 
-```
+```ocaml
 let five = let x =2
 in add_int x 3;;
 ```
 
 Output: val five:int=5
 
-```
+```ocaml
 let five =
 let x = 2 in 
 let y = 3 in
@@ -120,7 +120,7 @@ ret;;
 
 Output: int = 5
 
-```
+```ocaml
 let anti_div x y = 
 let y = x
 and x = y in
@@ -136,7 +136,7 @@ Output: int = 5
 Everything inside an expression is local.
 {% endhint %}
 
-```
+```ocaml
 let ten = 
     let x = 2 in
     let y = 
@@ -153,7 +153,7 @@ Output: val ten: int = 10
 Keyword **rec** before the function
 {% endhint %}
 
-```
+```ocaml
 let rec factor x = if x <> 0 then x * factor (x-1) else 1;;
 factor 3;;
 ```
@@ -164,7 +164,7 @@ Output is 6
 For each **if** expression, we **must** have an **else**
 {% endhint %}
 
-```
+```ocaml
 if 3 > 2 then 3 else 2;;
 
 if 3 > 2 then 2;;
@@ -182,7 +182,7 @@ if 3 > 2 then 2;;
   * filter
   * fold\_left
 
-```
+```ocaml
 let lst = [1; 2; 3];;
 0::lst;;
 (*int list = [0; 1; 2; 3]*)
@@ -197,7 +197,7 @@ List.hd [1; 2; 3];;
 Use predefined function when available \(here are some on course page\)
 {% endhint %}
 
-```
+```ocaml
 let lst = [1; 2; 3] in 
 let double x = 2 * x in 
 List.map double lst;;
@@ -221,7 +221,7 @@ List.fold_left add_int 0 lst;;
 
 \(I forgot the base case\)
 
-```
+```ocaml
 let rec odd_sum_to x = 
     if x = 0 then 0 (* comment: base case hehe*)
     else if x mod 2 = 1 
@@ -230,7 +230,7 @@ let rec odd_sum_to x =
 
 ```
 
-```
+```ocaml
 let rec up_to x = 
     if x = 0 then []
     else x::up_to(x-1)
@@ -240,7 +240,7 @@ List.fold_left add_int 0 list
 
 Sometimes you need a parenthesis 
 
-```
+```ocaml
 double add_int 1 2;;
     error
 double (add_int 1 2);;
@@ -249,7 +249,7 @@ int = 6
 
 ## Tuple
 
-```
+```ocaml
 (1, 2.);;
 (*int * float = (1, 2.)*)
 
@@ -260,7 +260,7 @@ f 3;;
 
 ## Match Statement
 
-```
+```ocaml
 match (3,4,6) with 
 | (3,x,y) -> x+y
 | _ -> 0;; (*underscore means we dont care about the value*)
@@ -277,7 +277,7 @@ int = 6
 match statements should be exhaustive, must use -&gt; not =
 {% endhint %}
 
-```
+```ocaml
 match (12,0,12) with
 | (_, 4, z) -> z;;
 (*Error: not exhaustive*)
@@ -290,7 +290,7 @@ match (2,3,4) with
 
 ## Type
 
-```
+```ocaml
 type week = Sun | Mon | Tue | Wed | Thu | Fri |Sat;;
 let week_to_num day = match day with
 | Sun -> 0
@@ -317,7 +317,7 @@ Float 2.;;
 Use **match** together with **Enumerator**
 {% endhint %}
 
-```
+```ocaml
 let rec float_sum lst = match lst with
 | [] -> 0.
 | （Float x）::rst -> x +. float_sum rst
@@ -328,7 +328,7 @@ let rec float_sum lst = match lst with
 
 \(Remember to copy the following lines to hw1\)
 
-```
+```ocaml
 type ('nonterminal, 'terminal) symbol =
   | N of 'nonterminal
   | T of 'terminal
@@ -336,7 +336,7 @@ type ('nonterminal, 'terminal) symbol =
 
 The following is an example of grammar:
 
-```
+```ocaml
 starting symbol <Expr>
 rules: 
     <Expr> ::= <Num><Op><Num>

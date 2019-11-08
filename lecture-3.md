@@ -31,7 +31,7 @@ Token = finite set
 
 ![Example of a grammar](.gitbook/assets/72225603_728295520969555_8338190246495649792_n.jpg)
 
-```
+```text
 {E -> E+T,
  E -> T,
  T -> ( E ),
@@ -55,7 +55,7 @@ Token = finite set
   * \(it is not useless when a token is a start symbol\)
 *  non-terminal is used but not defined
 
-  ```
+  ```text
   E -> E + T
   E -> T
   T -> T * F    (F is not defined anywhere, but it is a non-terminal)
@@ -66,7 +66,7 @@ Token = finite set
 
   Example: "software tools" approach \(Bell Labs 1970s\)
 
-  ```
+  ```c
   int getchar(void);
   int main(void) {return !getchar();}
   /* preprocessing */
@@ -105,7 +105,7 @@ Token = finite set
   * scope check
   * type check
 
-  ```
+  ```text
   non-terminals {S, NP, VP}
   terminals {., N, Adj, V, Adv}
   S -> NP NP.
@@ -133,7 +133,7 @@ Token = finite set
 * too much detail in your grammar 
 * ambiguous grammar
 
-  ```
+  ```text
   E -> E + E
   E -> E * E
   E -> ID
