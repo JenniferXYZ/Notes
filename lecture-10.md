@@ -58,6 +58,9 @@ If P is of known size, okay
 If not, backtracking trouble
 ```
 
+#### Advantages
+
+* 
 ## Debug
 
 Use 'write', etc.

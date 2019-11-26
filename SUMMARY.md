@@ -12,8 +12,10 @@
 * [Lecture 6](lecture-6.md)
 * [Lecture 7](lecture-7.md)
 * [Lecture 8](lecture-8.md)
+* [Lecture 9](lecture-9.md)
 * [Discussion 4](discussion-4.md)
 * [Lecture 10](lecture-10.md)
 * [Discussion 5](discussion-5.md)
 * [From Internet](from-internet.md)
+* [Lecture 9](lecture-9-1.md)
 
