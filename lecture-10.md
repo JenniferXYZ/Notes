@@ -60,7 +60,19 @@ If not, backtracking trouble
 
 #### Advantages
 
-* 
+* Because these data structures are pushed onto the stack, accessing data is FAST
+* Don't worry about heap management like in OCaml and C++
+* **Heap management** is slower than stack management
+
+#### Disadvantages
+
+* stack overflow :\(
+* If you have a very successful program, then it will keep succeeding and building terms, and the stack might get too big.
+* When the stack is enormous, they look in the stack for objects that cannot be referred to from here on out, and these objects are no longer accessible
+* **Prolog interpreters are like heaps because this is a garbage collecting stack**
+* Normally, the program is like a stack, but in practice, you still have the problems of a heap
+* **If you try to write some random thing that succe**s**s all the time, then Prolog is probably NOT the best choice for efficiency**
+
 ## Debug
 
 Use 'write', etc.

@@ -17,5 +17,5 @@
 * [Lecture 10](lecture-10.md)
 * [Discussion 5](discussion-5.md)
 * [From Internet](from-internet.md)
-* [Lecture 9](lecture-9-1.md)
+* [Lecture 11](lecture-11.md)
 
