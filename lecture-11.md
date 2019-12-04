@@ -59,3 +59,5 @@ FOL says the first two has to imply the 3rd. We cannot however prove this with p
   * For all X, \(P\(X\) -&gt; Q\(X\)\) ^ P\(a\) -&gt; Q\(a\) 
   * For all X, \(P\(X\)\) &lt;-&gt; ~There exists Y ~P\(Y\)
 * 
+
+
