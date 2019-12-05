@@ -18,4 +18,5 @@
 * [Discussion 5](discussion-5.md)
 * [From Internet](from-internet.md)
 * [Lecture 11](lecture-11.md)
+* [Lecture Last](lecture-last.md)
 
