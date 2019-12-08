@@ -23,6 +23,8 @@ Contrast: In some languages, composite data values such as **arrays** are either
 
 sets the scope \(range of functionality\) of a [variable](https://whatis.techtarget.com/definition/variable) so that it may only be called \(referenced\) from within the block of code in which it is defined. The scope is determined when the code is compiled. A variable declared in this fashion is sometimes called a private variable.
 
+Efficient code for lexical scoping is possible because a compiler can determine before program evaluation the scope of all bindings and the binding to which each identifier reference resolves.
+
 C++, Java, Scheme, Python, Ocaml, Prolog
 
 ### Dynamic Scoping
@@ -44,6 +46,10 @@ also portable through a set of standard libraries and a standard mechanism for d
 BUT for st least mutable objects \(objects that can be modified\), the values are **POINTERS** to the actual storage. 
 
 The storage of an object **is not copied** when an object is passed to or returned from a procedure.
+
+### Lexically scoped, block-structured
+
+Block structure and lexical scoping help create programs that are modular, easy to read, easy to maintain, and reliable.
 
 
 
