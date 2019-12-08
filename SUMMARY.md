@@ -20,4 +20,5 @@
 * [Lecture 11](lecture-11.md)
 * [Lecture 12](lecture-12.md)
 * [Lecture Last](lecture-last.md)
+* [From Textbook](from-textbook.md)
 

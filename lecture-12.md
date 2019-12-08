@@ -13,8 +13,13 @@ description: 11/18/2019
 * A language that has a long tradition in computer science and ideas that when they were first introduced were considered way too bleeding-edge and inefficient
 * Slow, academic side of things
 * Too slow for academic use
+  * The relative inefficiency that sometimes remains results from **run-time checks that support generic arithmetic and help programmers detect and correct various common programming errors.**
 
 ## Advantages of Scheme
+
+### Tail recursive
+
+### Has floating point numbers
 
 ### Scheme is OO in some sense
 
@@ -28,6 +33,11 @@ description: 11/18/2019
 
 * Like M.L., OCaml, Java, Python
 * Unlike C++, C
+* Dynamically allocated and retained until no longer needed, then automatically deallocated.
+* Simple atomic values, such as small integers, characters, booleans, and the empty list, are typically represented as immediate values and thus incur no allocation or deallocation overhead.
+* **First-class data type**
+  * retained indefinitely
+  * may be passed freely as arguments to procedures, returned as values from procedures, and combined to form new objects \(see textbook summary\)
 
 ### Types in Scheme:
 
@@ -94,4 +104,52 @@ Metaprograms has made it survive for many years
 * call zillions of f until you call h
 * Stack size proportional to recursion depth, so you will have problem if you try to concatenate a list of one million
 * Depth of the stack is bounded
+
+### High level arithmetic
+
+* Take an integer and keep squaring it, multiply it then by itself. What will happen?
+  * run out of memory
+  * You won’t have an integer overflow, but you can generate data so big that it doesn’t fit into RAM
+  * The only thing that can go wrong where the code doesn’t match math is that you can exhaust memory 
+
+## Difference between Scheme and Lisp
+
+* Heavy emphasis on static scoping for scheme. Common Lisp has a bigger library and intended for production code
+* Scheme was intended to be more stripped down
+* A big AI system would use common lisp probably
+
+### Syntax identifier
+
+* "\*" is used in scheme all the time 
+* Not a built-in operator, but rather a function in standard library
+* Don't allow +,-,., or digit to start an identifier
+* This sort of freedom of identifiers will let you do all sorts of stuff
+* By convention, identifiers ending in ? are predicates
+  * eq?
+  * functions that return boolean
+  * Scheme is case-insensitive, unless when string comparison 
+
+## Scheme Basics
+
+### Lists
+
+* \( l i s t . s \)
+* \(\) : empty list
+* \( a b . c\)
+* Improper list
+* Data structure built out of pairs except the last item isn’t nil
+* . is just syntax like a parentheses to represent this notion
+* Proper list
+
+### Booleans
+
+* \#t, \#f
+* \#f is the only false value
+
+### Vectors
+
 * 
+| • | Either ends in nil or a pair |
+| :--- | :--- |
+
+
