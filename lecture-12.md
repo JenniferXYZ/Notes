@@ -96,6 +96,15 @@ grep.
 * Procedures you create and they immediately represent the entire future of your program which you later replay
 * like snapshots but not really snapshots
 * A continuation is a procedure that embodies the remainder of a program at a given point in the program. A continuation may be obtained at any time during the execution of a program. As with other procedures, a continuation is a first-class object and may be invoked at any time after its creation. Whenever it is invoked, the program immediately continues from the point where the continuation was obtained. **Continuations allow the implementation of complex control mechanisms including explicit backtracking, multithreading, and coroutines.**
+* NOT like POSIX threads but use these in other kinds of languages
+* **A multi-threaded application is modeled as a bunch of continuations**
+* Append continuation to the current list of processes
+
+Scheme is about stripping down a language to the smallest primitives you can so you can understand the key concepts of the language rather than gingerbread.
+
+We call the continuation function and pass in the value.
+
+
 
 ## Lisp
 
