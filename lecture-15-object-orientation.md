@@ -127,7 +127,26 @@ If you have a function f, you don't pass n directly. Rather, you use Lisp notati
 * packaged up evaluation of n in a procedure that will be called in a callee
 * **what is actually generated in the object code is a lambda expression**
 
+### Smart Pointers
 
+* Pros: skips useless or dangerous computation
+* Cons: slower if all you are passing are values you will need anyway
+
+## Lazy Evaluation vs Eager Evaluation
+
+### Lazy Evaluation
+
+Put off executing code as long as possible
+
+When you run the program, the implementation does not actually do anything. It just remembers what you want it to do. If you want to print out, it lazily goes back and only calls the function it needs to call and skips out on the functions it does not need.
+
+* Haskell computed lazily. 
+
+### Eager Evaluation
+
+Whenever you do a function call, you eagerly go and evaluate arguments even if you don't need them.
+
+* C++ and Ocaml are by default eager evaluated
 
 
 
