@@ -74,9 +74,5 @@ If you have a function f, you don't pass n directly. Rather, you use Lisp notati
 * packaged up evaluation of n in a procedure that will be called in a callee
 * **what is actually generated in the object code is a lambda expression**
 
-\*\*\*\*
-
-
-
 
 
