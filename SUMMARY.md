@@ -20,6 +20,7 @@
 * [Lecture 11](lecture-11.md)
 * [Lecture 12 Scheme](lecture-12.md)
 * [Lecture 13](lecture-13.md)
+* [Lecture 14](lecture-14.md)
 * [Lecture Last](lecture-last.md)
 * [From Textbook](from-textbook.md)
 * [Some example codes](some-example-codes.md)
