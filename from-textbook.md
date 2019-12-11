@@ -51,13 +51,67 @@ The storage of an object **is not copied** when an object is passed to or return
 
 Block structure and lexical scoping help create programs that are modular, easy to read, easy to maintain, and reliable.
 
+#### let \(can be used in body\)
 
+```text
+(let ([id val-expr] ...) body ...+)
+(let proc-id ([id init-expr] ...) body ...+)
+```
 
+The first form evaluates the val-exprs left-to-right, creates a new location for each id, and places the values into the locations. It then evaluates the bodys, in which the ids are bound. The last body expression is in tail position with respect to the let form. The ids must be distinct according to bound-identifier=?.
 
+ The second form evaluates the init-exprs; the resulting values become arguments in an application of a procedure \(lambda \(id [...](https://docs.racket-lang.org/reference/stx-patterns.html#%28form._%28%28lib._racket%2Fprivate%2Fstxcase-scheme..rkt%29._......%29%29)\) body ...+\), where proc-id is bound within the bodys to the procedure itself.
 
+```text
+> (let ([x 5]) x)
+5
 
+> (let ([x 5])
+    (let ([x 2]
+          [y x])
+      (list y x)))
+'(5 2)
+================================
+> (let fac ([n 10])
+    (if (zero? n)
+        1
+        (* n (fac (sub1 n)))))
+3628800
+```
 
+#### let\* \(can be used in latter val-exprs\)
 
+```text
+(let* ([id val-expr] ...) body ...+)
+```
+
+ Like let, but evaluates the val-exprs one by one, creating a location for each id as soon as the value is available. The ids are bound in the remaining val-exprs as well as the bodys, and the ids need not be distinct; later bindings shadow earlier bindings.
+
+```text
+> (let* ([x 1]
+         [y (+ x 1)])
+    (list y x))
+'(2 1)
+```
+
+#### letrec \(can be used even before its own val-exprs\)
+
+```text
+(letrec ([id val-expr] ...) body ...+)
+```
+
+ Like let, including left-to-right evaluation of the val-exprs, but the locations for all ids are created first, all ids are bound in all val-exprs as well as the bodys, and each id is initialized immediately after the corresponding val-expr is evaluated. The ids must be distinct according to bound-identifier=?.
+
+```text
+> (letrec ([is-even? (lambda (n)
+                       (or (zero? n)
+                           (is-odd? (sub1 n))))]
+           [is-odd? (lambda (n)
+                      (and (not (zero? n))
+                           (is-even? (sub1 n))))])
+    (is-odd? 11))
+#t
+```
 
 
 

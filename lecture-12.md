@@ -66,6 +66,7 @@ A. That would be an error in scope.
 {% endhint %}
 
 * You look at the closest call and this is like static scoping in C
+* **carries the context of the callee into the function body, i.e. all its variable bindings. This assumes existence of a heap, since it would not be easy to store a callee's variables on the new stack frame of a called function**
 
 #### Bash uses dynamic scoping for environment variables
 
@@ -88,6 +89,10 @@ grep.
 * Objects of procedure types are first-class objects
 * Same namespace and values as everything else
 * All of this is the same to Scheme and we don’t have a special sort of case for procedures
+
+### dynamic scoping
+
+* **the caller does not carry the callee's context into the function body, so it would be easier to allocate on the stack, because all the caller's data will live in the caller's stack frame**
 
 ### Continuations
 

@@ -75,6 +75,7 @@ Calls must be fast and clear.
 ### Call by value
 
 * widely used in **Java, C++ etc**
+* **the parameter is evaluated before the function is executed**
 * Pros: **Simple**
 * Cons: 
   * Does not work well with large objects
@@ -123,9 +124,15 @@ Functions: pointers \(\*n\) callee
 
 If you have a function f, you don't pass n directly. Rather, you use Lisp notation and pass in a func and when you call it, you will return n.
 
+* **parameter is evaluated each and every time it is accessed**
 * This is what you pass at the low-level but you haven't evaluated n at all
 * packaged up evaluation of n in a procedure that will be called in a callee
 * **what is actually generated in the object code is a lambda expression**
+
+### Call by need
+
+* A memorized version of call by name
+* **operate on global within a function before ever being executed**
 
 ### Smart Pointers
 
