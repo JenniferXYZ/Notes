@@ -1,7 +1,7 @@
 # Table of contents
 
 * [Welcome to Hell](README.md)
-* [Course Website](https://web.cs.ucla.edu/classes/fall19/cs131/index.html)
+* [Course Website](https://web.cs.ucla.edu/classes/fall20/cs131/)
 * [Discussion 0](discussion-0.md)
 * [Lecture 1](lecture-1.md)
 * [Lecture 2](lecture-2.md)
