@@ -4,6 +4,8 @@ description: '09/30/2019 Class started with a quiz: read ASCII file, count words
 
 # Lecture 1
 
+Read Chapter 1-2 \(Syntax\), 5,7,9 \(ML\)
+
 ## Some History
 
 D.E. Knuth: The Art of Computer Programming \(TAoCP\)
@@ -102,17 +104,37 @@ tr -cs -s 'A-Za-z' '[\n]x' | sort | uniq -c | sort -nr
 
 ### Safety
 
-* Error check at run time or compile time, or no checking
+* often a huge deal
+* **static vs dynamic checking of programming language's rules**
 
 ```cpp
-char c;
-int *p = &c;
-*p = 10000;
+char *p = NULL;
+...
+*p = 'x'; //trying to dereference a null pointer
 /*compile time error*/
+/* In C/C++, this is an error and the implementation is not required to detect
+the error; it can do whatever it wants. */
 ```
 
-* Mutability
-  * How well does the language support changes to your program or to the language itself. Successful languages evolve. Want to make changes to the language without breaking previous code. You want to go for languages that will encourage evolving.
+so better: static checking of the same thing. In Ocaml, the compiler will not allow this program \(!\). So dereferencing NULL would not happen. 
 
+### Exception Handling \("error handling"\)
 
+Another way to do dynamic checking-it has strengths and weaknesses
+
+### Abstraction
+
+How well does the language let you build abstraction layers in your program?
+
+### Concurrency - Parallelism
+
+### Mutability
+
+How well does the language support changes to your program or to the language itself. Successful languages evolve. Want to make changes to the language without breaking previous code. You want to go for languages that will encourage evolving.
+
+### Other issues:
+
+Flexibility
+
+Expressibility
 
