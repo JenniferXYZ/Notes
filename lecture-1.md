@@ -71,21 +71,38 @@ tr -cs -s 'A-Za-z' '[\n]x' | sort | uniq -c | sort -nr
 
 ## Language Design Principles
 
-* Orthogonality
-  * Every axis is independent and you can make a choice on one axis without worrying what you choose on the other axis.
-  * Examples of non-orthogonality
+### **Orthogonality**
 
-    In C, functions can return any values except arrays. Because when working on 16-bit machine, if you return a gigantic array, it explodes. It is not orthogonal because there are some types that you cannot return in a function.
+* Every axis is independent and you can make a choice on one axis without worrying what you choose on the other axis. \(e.g. types vs object lifetimes\)
+* Examples of non-orthogonality \(Counter in C\)
 
-  * You would rather choose a language that is orthogonal, because it does not have these edge restrictions and exception cases and it is a lot simpler. 
-* Efficiency \(time/space/power/network access\)
-* Simplicity 
-  * easy to learn, remember and implement
-  * Compare \(\* \(+ 3 4\) 5\) and 3 4 + 5 \*, you need to give up something to get a simple language
-* Convenience
-* Familiarity
-* Safety
-  * Error check at run time or compile time, or no checking
+  **In C, functions can return values of any type EXCEPT arrays**. Because in C, arrays \*decay\* to pointers in most contexts. "return arr;" in a function returns a pointer even if ARR is an array. When working on 16-bit machine, if you return a gigantic array, it explodes. It is not orthogonal because there are some types that you cannot return in a function.
+
+* You would rather choose a language that is orthogonal, because it does not have these edge restrictions and exception cases and it is a lot simpler. 
+
+### Efficiency \(time/space/power/network access\)
+
+* CPU time
+* clock time
+* RAM \(local storage\)
+* I/O \(to flash or disk\)
+* Network access \(often the biggest bottleneck\)
+
+### Simplicity 
+
+* easy to learn, remember and implement
+* Compare \(\* \(+ 3 4\) 5\) and 3 4 + 5 \*, you need to give up something to get a simple language
+* e.g. Compare i++; ++i; i+=1; i=i+1;
+
+### Convenience
+
+* take few steps, little time to read and write programs
+
+### Familiarity
+
+### Safety
+
+* Error check at run time or compile time, or no checking
 
 ```cpp
 char c;
@@ -96,4 +113,6 @@ int *p = &c;
 
 * Mutability
   * How well does the language support changes to your program or to the language itself. Successful languages evolve. Want to make changes to the language without breaking previous code. You want to go for languages that will encourage evolving.
+
+
 
